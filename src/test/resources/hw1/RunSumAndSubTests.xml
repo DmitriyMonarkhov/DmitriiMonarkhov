@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Running addition and subtraction tests">
+
+    <test name="Running addition and subtraction tests">
+        <classes>
+            <class name="hw1.TestingClasses.SubtractTest"/>
+            <class name="hw1.TestingClasses.SumTest"/>
+        </classes>
+    </test>
+</suite>
