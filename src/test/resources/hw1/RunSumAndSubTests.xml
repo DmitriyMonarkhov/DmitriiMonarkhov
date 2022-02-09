@@ -3,8 +3,8 @@
 
     <test name="Running addition and subtraction tests">
         <classes>
-            <class name="hw1.TestingClasses.SubtractTest"/>
-            <class name="hw1.TestingClasses.SumTest"/>
+            <class name="hw1.SubtractTest"/>
+            <class name="hw1.SumTest"/>
         </classes>
     </test>
 </suite>

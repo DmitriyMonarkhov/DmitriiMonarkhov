@@ -3,8 +3,8 @@
 
     <test name="Calculator for division and multiply operations">
         <classes>
-            <class name="hw1.TestingClasses.DivideTest"/>
-            <class name="hw1.TestingClasses.MultiplyTest"/>
+            <class name="hw1.DivideTest"/>
+            <class name="hw1.MultiplyTest"/>
         </classes>
     </test>
 </suite>

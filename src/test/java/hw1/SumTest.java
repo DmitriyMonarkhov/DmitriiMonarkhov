@@ -1,4 +1,4 @@
-package hw1.TestingClasses;
+package hw1;
 
 import hw1.dataProviders.SumDP;
 import org.testng.annotations.Test;

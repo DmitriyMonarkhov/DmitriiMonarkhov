@@ -3,10 +3,10 @@
 
     <test name="Running all tests">
         <classes>
-            <class name="hw1.TestingClasses.SubtractTest"/>
-            <class name="hw1.TestingClasses.SumTest"/>
-            <class name="hw1.TestingClasses.DivideTest"/>
-            <class name="hw1.TestingClasses.MultiplyTest"/>
+            <class name="hw1.SubtractTest"/>
+            <class name="hw1.SumTest"/>
+            <class name="hw1.DivideTest"/>
+            <class name="hw1.MultiplyTest"/>
         </classes>
     </test>
 </suite>

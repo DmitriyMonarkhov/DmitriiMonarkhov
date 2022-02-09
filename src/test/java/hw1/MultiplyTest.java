@@ -1,4 +1,4 @@
-package hw1.TestingClasses;
+package hw1;
 
 import hw1.dataProviders.MultiplyDP;
 import org.testng.annotations.Test;
