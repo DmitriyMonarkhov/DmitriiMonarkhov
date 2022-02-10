@@ -11,7 +11,15 @@ public class DivideDP {
                 {8, 8, 1},
                 {5, 2, 2.5},
                 {44, 1, 44},
-                {34, 0, Double.POSITIVE_INFINITY}
+        };
+    }
+    @DataProvider(name = "DP for divide operation by zero")
+    public Object[][] divideZeroDP() {
+        return new Object[][] {
+                {10, 0},
+                {-20, 0},
+                {120, 0},
+                {11, -0}
         };
     }
 }
