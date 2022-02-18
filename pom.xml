@@ -18,6 +18,9 @@
         <webdrivermanager.version>5.0.3</webdrivermanager.version>
         <assertj-core.version>3.22.0</assertj-core.version>
         <commons-configuration.version>1.10</commons-configuration.version>
+        <calculator.version>1.0</calculator.version>
+        <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
+        <checkstyle.version>9.2.1</checkstyle.version>
     </properties>
 
     <dependencies>
@@ -38,7 +41,7 @@
         <dependency>
             <groupId>com.epam.tat.module4</groupId>
             <artifactId>calculator</artifactId>
-            <version>1.0</version>
+            <version>${calculator.version}</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/src/main/resources/calculator-1.0.jar</systemPath>
         </dependency>
@@ -91,12 +94,12 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.1.2</version>
+                <version>${maven-checkstyle-plugin.version}</version>
                 <dependencies>
                     <dependency>
                         <groupId>com.puppycrawl.tools</groupId>
                         <artifactId>checkstyle</artifactId>
-                        <version>9.2.1</version>
+                        <version>${checkstyle.version}</version>
                     </dependency>
                 </dependencies>
                 <configuration>
