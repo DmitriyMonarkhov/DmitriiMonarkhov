@@ -1,6 +1,6 @@
 package com.epam.tc.hw2.ex2.runtest;
 
-import com.epam.tc.hw2.DriverManager;
+import com.epam.tc.hw2.BaseTest;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-public class SecondExerciseRunTest extends DriverManager {
+public class SecondExercise extends BaseTest {
 
     private static final List<String> CHOSEN_OPTIONS = new ArrayList<>(
         Arrays.asList("Colors: value changed to Yellow", "metal: value changed to Selen",

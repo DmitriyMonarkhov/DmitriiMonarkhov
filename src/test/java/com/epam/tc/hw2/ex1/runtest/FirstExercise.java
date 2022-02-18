@@ -1,6 +1,6 @@
 package com.epam.tc.hw2.ex1.runtest;
 
-import com.epam.tc.hw2.DriverManager;
+import com.epam.tc.hw2.BaseTest;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-public class FirstExerciseRunTest extends DriverManager {
+public class FirstExercise extends BaseTest {
 
     private static final List<String> FOUR_IMAGES_TEXTS = Arrays.asList(
         "To include good practices\nand ideas from successful\nEPAM project",

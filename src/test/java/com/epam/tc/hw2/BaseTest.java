@@ -14,7 +14,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 
-public class DriverManager {
+public class BaseTest {
 
     protected WebDriver driver;
     protected SoftAssertions softAssertions;
@@ -32,7 +32,7 @@ public class DriverManager {
 
     @BeforeMethod(alwaysRun = true)
     public void browserSetup() throws ConfigurationException {
-        driver = new DriverManager().setupDriver();
+        driver = new BaseTest().setupDriver();
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         softAssertions = new SoftAssertions();
         properties = new PropertiesConfiguration(data);

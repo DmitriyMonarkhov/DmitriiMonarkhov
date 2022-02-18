@@ -3,13 +3,13 @@
 
     <test name="exercise_1">
         <classes>
-            <class name="com.epam.tc.hw2.ex1.runtest.FirstExerciseRunTest"/>
+            <class name="com.epam.tc.hw2.ex1.runtest.FirstExercise"/>
         </classes>
     </test>
 
     <test name="exercise_2">
         <classes>
-            <class name="com.epam.tc.hw2.ex2.runtest.SecondExerciseRunTest"/>
+            <class name="com.epam.tc.hw2.ex2.runtest.SecondExercise"/>
         </classes>
     </test>
 </suite>
