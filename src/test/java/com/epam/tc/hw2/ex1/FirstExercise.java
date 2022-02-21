@@ -1,4 +1,4 @@
-package com.epam.tc.hw2.ex1.runtest;
+package com.epam.tc.hw2.ex1;
 
 import com.epam.tc.hw2.BaseTest;
 import java.util.Arrays;

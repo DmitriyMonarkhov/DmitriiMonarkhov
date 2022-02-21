@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.epam.projects</groupId>
@@ -11,7 +11,6 @@
     <properties>
         <testng.version>7.5</testng.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <testng.configs.path>${project.build.testOutputDirectory}</testng.configs.path>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
         <selenium-java.version>4.1.0</selenium-java.version>
@@ -21,6 +20,8 @@
         <calculator.version>1.0</calculator.version>
         <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
         <checkstyle.version>9.2.1</checkstyle.version>
+        <testng.configs.path>${project.build.testOutputDirectory}</testng.configs.path>
+
     </properties>
 
     <dependencies>
@@ -133,7 +134,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <testng.suite.file>${project.basedir}/src/test/resources/hw1/RunningAllTests.xml</testng.suite.file>
+                <testng.suite.file>${project.basedir}/src/test/resources/suits/hw1/RunningAllTests.xml</testng.suite.file>
             </properties>
         </profile>
 
@@ -143,7 +144,7 @@
                 <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
-                <testng.suite.file>${testng.configs.path}/RunSumAndSubTests.xml</testng.suite.file>
+                <testng.suite.file>${project.basedir}/src/test/resources/suits/hw1/RunSumAndSubTests.xml</testng.suite.file>
             </properties>
         </profile>
 
@@ -153,14 +154,17 @@
                 <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
-                <testng.suite.file>${testng.configs.path}/RunMultAndDivTests.xml</testng.suite.file>
+                <testng.suite.file>${project.basedir}/src/test/resources/suits/hw1/RunMultAndDivTests.xml</testng.suite.file>
             </properties>
         </profile>
 
         <profile>
         <id>hw2</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
             <properties>
-                <suite.file>${project.basedir}/src/test/resources/hw2/suite/SuiteHW2.xml</suite.file>
+                <testng.suite.file>${project.basedir}/src/test/resources/suits/hw2/SuiteHW2.xml</testng.suite.file>
             </properties>
         </profile>
 
