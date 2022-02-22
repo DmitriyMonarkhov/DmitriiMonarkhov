@@ -66,7 +66,6 @@
             <artifactId>commons-configuration</artifactId>
             <version>${commons-configuration.version}</version>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -165,6 +164,16 @@
             </activation>
             <properties>
                 <testng.suite.file>${project.basedir}/src/test/resources/suits/hw2/SuiteHW2.xml</testng.suite.file>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>hw3</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <testng.suite.file>${project.basedir}/src/test/resources/suits/hw3/SuiteHW3.xml</testng.suite.file>
             </properties>
         </profile>
 
