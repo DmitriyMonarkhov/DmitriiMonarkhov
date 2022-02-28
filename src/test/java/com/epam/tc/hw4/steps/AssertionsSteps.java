@@ -2,6 +2,7 @@ package com.epam.tc.hw4.steps;
 
 import com.epam.tc.hw4.components.BenefitComponent;
 import com.epam.tc.hw4.components.LoginComponent;
+import com.epam.tc.hw4.pages.DifferentElementsPage;
 import com.epam.tc.hw4.pages.HomePage;
 import com.epam.tc.hw4.tests.BaseTest;
 import io.qameta.allure.Step;
@@ -9,32 +10,26 @@ import java.util.List;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.WebDriver;
 
-public class FirstExerciseSteps extends BaseTest {
+public class AssertionsSteps extends BaseTest {
 
     protected HomePage homePage;
     protected LoginComponent loginPanel;
     protected BenefitComponent benefitComponent;
+    protected DifferentElementsPage differentElementsPage;
 
-    public FirstExerciseSteps(WebDriver driver) {
+
+    public AssertionsSteps(WebDriver driver) {
         homePage = new HomePage(driver);
         loginPanel = new LoginComponent(driver);
         benefitComponent = new BenefitComponent(driver);
-    }
+        differentElementsPage = new DifferentElementsPage(driver);
 
-    @Step("Open test site by URL")
-    public void openWebPage(WebDriver driver) {
-        homePage.openByURL();
     }
 
     @Step("Assert Browser title")
     public void assertBrowserTitle(String expectedTitle) {
         String actualTitle = homePage.getTitle();
         Assertions.assertThat(actualTitle).isEqualTo(expectedTitle);
-    }
-
-    @Step("Perform login")
-    public void performLogin(String login, String password) {
-        loginPanel.performLogin(login, password);
     }
 
     @Step("Assert User name in the left-top side of screen that user is loggined as ROMAN IOVLEV")
@@ -99,6 +94,17 @@ public class FirstExerciseSteps extends BaseTest {
         for (String expectedLeftSideBarItem : expectedSideBarItems) {
             for (String actualLeftSideBarItem : actualSideBarItems) {
                 Assertions.assertThat(expectedLeftSideBarItem.equals(actualLeftSideBarItem));
+            }
+        }
+    }
+
+    @Step("Assert correct logTexts")
+    public void assertLogTexts(List<String> expectedHeaderItemsList) {
+        List<String> actualLogList = differentElementsPage.getLogList();
+        for (String expectedLogText : expectedHeaderItemsList) {
+
+            for (String actualLogText : actualLogList) {
+                Assertions.assertThat(expectedLogText.equals(actualLogText));
             }
         }
     }

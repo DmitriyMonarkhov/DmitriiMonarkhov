@@ -1,7 +1,8 @@
 package com.epam.tc.hw4.tests;
 
 
-import com.epam.tc.hw4.steps.SecondExerciseSteps;
+import com.epam.tc.hw4.steps.ActionSteps;
+import com.epam.tc.hw4.steps.AssertionsSteps;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.testng.annotations.Test;
@@ -13,39 +14,40 @@ public class SecondExercise extends BaseTest {
     @Test
     public void exercise_2_Test() {
 
-        SecondExerciseSteps steps = new SecondExerciseSteps(driver);
+        ActionSteps actionSteps = new ActionSteps(driver);
+        AssertionsSteps assertionsSteps = new AssertionsSteps(driver);
 
         // Open test site by URL
-        steps.openWebPage(driver);
+        actionSteps.openWebPage();
 
         // Assert Browser title
-        steps.assertBrowserTitle(TITLE);
+        assertionsSteps.assertBrowserTitle(TITLE);
 
         // Perform login
         String login = properties.getString("login");
         String password = properties.getString("password");
-        steps.performLogin(login, password);
+        actionSteps.performLogin(login, password);
 
         // Assert Username in the left-top side of screen that user is loggined
         String username = properties.getString("username");
-        steps.assertUserName(username);
+        assertionsSteps.assertUserName(username);
 
         // Open through the header menu Service -> Different Elements Page
-        steps.openServiceMenu();
+        actionSteps.openServiceMenu();
 
         // Select checkboxes Water and Wind
-        steps.selectWaterAndWindCheckboxes();
+        actionSteps.selectWaterAndWindCheckboxes();
 
         // Select radio Selen
-        steps.selectSelenRadio();
+        actionSteps.selectSelenRadio();
 
         // Select in dropdown Yellow
-        steps.selectYellowInDropdown();
+        actionSteps.selectYellowInDropdown();
 
         // Assert that
         //for each checkbox there is an individual log row and value is corresponded to the status of checkbox
         //for radio button there is a log row and value is corresponded to the status of radio button
         //for dropdown there is a log row and value is corresponded to the selected value
-        steps.assertLogTexts(LOG_TEXTS);
+        assertionsSteps.assertLogTexts(LOG_TEXTS);
     }
 }
