@@ -11,7 +11,7 @@ public class ScreenshotListener implements ITestListener {
     public void onTestFailure(ITestResult itestResult) {
         Object driver = itestResult.getTestContext().getAttribute("driver");
         if (driver != null) {
-            AttachmentUtil.makeScreenshotAttachment("Failure screenshot",
+            AttachmentUtils.makeScreenshotAttachment("Failure screenshot",
                 ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES));
         }
     }

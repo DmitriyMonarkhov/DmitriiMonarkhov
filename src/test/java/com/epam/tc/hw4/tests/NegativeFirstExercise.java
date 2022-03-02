@@ -5,10 +5,13 @@ import com.epam.tc.hw4.steps.ActionSteps;
 import com.epam.tc.hw4.steps.AssertionsSteps;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
+import org.testng.ITestContext;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-@Listeners(ScreenshotListener.class)
+
+@Listeners({ScreenshotListener.class})
 public class NegativeFirstExercise extends BaseTest {
 
     @Feature("Fail HomePage Test")
