@@ -28,6 +28,7 @@
         <allure-testng.version>2.13.2</allure-testng.version>
         <aspectj.version>1.9.7</aspectj.version>
         <allure-maven.version>2.10.0</allure-maven.version>
+        <cucumber-version>7.2.3</cucumber-version>
     </properties>
 
     <dependencies>
@@ -92,6 +93,17 @@
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
             <version>${commons-io.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>${cucumber-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber-version}</version>
         </dependency>
 
     </dependencies>
@@ -223,6 +235,16 @@
             </activation>
             <properties>
                 <testng.suite.file>${project.basedir}/src/test/resources/suits/hw4/SuiteHW4.xml</testng.suite.file>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>hw5</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <testng.suite.file>${project.basedir}/src/test/resources/suits/hw5/SuiteHW5.xml</testng.suite.file>
             </properties>
         </profile>
 
