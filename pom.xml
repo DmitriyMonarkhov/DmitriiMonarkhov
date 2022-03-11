@@ -248,6 +248,16 @@
             </properties>
         </profile>
 
+        <profile>
+            <id>hw6</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <testng.suite.file>${project.basedir}/src/test/resources/suits/hw6/SuiteHW6.xml</testng.suite.file>
+            </properties>
+        </profile>
+
     </profiles>
 
     <reporting>
