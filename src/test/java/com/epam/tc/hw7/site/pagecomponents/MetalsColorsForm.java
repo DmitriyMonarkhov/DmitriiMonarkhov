@@ -12,10 +12,11 @@ import com.epam.jdi.light.elements.pageobjects.annotations.locators.UI;
 import com.epam.jdi.light.ui.html.elements.common.Button;
 import com.epam.jdi.light.ui.html.elements.complex.RadioButtons;
 import com.epam.tc.hw7.entities.MetalColorsEntity;
+import org.assertj.core.api.SoftAssertions;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-import org.assertj.core.api.SoftAssertions;
 
 public class MetalsColorsForm extends Form<MetalColorsEntity> {
 
@@ -70,15 +71,8 @@ public class MetalsColorsForm extends Form<MetalColorsEntity> {
                 "Color: " + metalColorsEntity.color,
                 "Metal: " + metalColorsEntity.metals, "Vegetables: " + stringOfVegetables
         );
-
         List<String> actualResult = resultsListTransfer();
-
-        SoftAssertions soft = new SoftAssertions();
-
-        soft.assertThat(actualResult)
-                .as("Expected results in 'Result section' are not equal to actual results")
-                .isEqualTo(expectedResult);
-
+        actualResult.equals(expectedResult);
     }
 
     @Override

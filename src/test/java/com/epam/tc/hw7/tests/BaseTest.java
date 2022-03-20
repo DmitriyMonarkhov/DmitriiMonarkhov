@@ -12,7 +12,6 @@ import com.epam.tc.hw7.site.JdiSite;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
-
 public class BaseTest {
 
     @BeforeSuite(alwaysRun = true)

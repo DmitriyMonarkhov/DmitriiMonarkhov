@@ -13,6 +13,7 @@ import com.epam.tc.hw7.site.pagecomponents.LoginForm;
 @Url("/index.html")
 @Title("Home Page")
 public class HomePage extends WebPage {
+
     @Css("form")
     public static LoginForm loginForm;
     @Css("img#user-icon")
@@ -23,5 +24,4 @@ public class HomePage extends WebPage {
 
     @UI("[id = user-name]")
     public static Text userName;
-
 }
