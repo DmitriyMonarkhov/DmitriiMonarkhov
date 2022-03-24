@@ -1,6 +1,10 @@
 package com.epam.tc.hw7.site.pagecomponents;
 
-import static com.epam.tc.hw7.site.pages.MetalsColorsPage.resultsListTransfer;
+import static com.epam.tc.hw7.dataproviders.MetalsColorsDataProvider.getColor;
+import static com.epam.tc.hw7.dataproviders.MetalsColorsDataProvider.getElements;
+import static com.epam.tc.hw7.dataproviders.MetalsColorsDataProvider.getMetal;
+import static com.epam.tc.hw7.dataproviders.MetalsColorsDataProvider.getSummary;
+import static com.epam.tc.hw7.dataproviders.MetalsColorsDataProvider.getVegetables;
 
 import com.epam.jdi.light.elements.complex.Checklist;
 import com.epam.jdi.light.elements.complex.dropdown.Dropdown;
@@ -12,11 +16,8 @@ import com.epam.jdi.light.elements.pageobjects.annotations.locators.UI;
 import com.epam.jdi.light.ui.html.elements.common.Button;
 import com.epam.jdi.light.ui.html.elements.complex.RadioButtons;
 import com.epam.tc.hw7.entities.MetalColorsEntity;
-import org.assertj.core.api.SoftAssertions;
-
-import java.util.Arrays;
+import com.epam.tc.hw7.site.JdiSite;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class MetalsColorsForm extends Form<MetalColorsEntity> {
 
@@ -41,7 +42,7 @@ public class MetalsColorsForm extends Form<MetalColorsEntity> {
     @Override
     public void fill(MetalColorsEntity metalColorsEntity) {
 
-        List<Integer> listOfSummary = metalColorsEntity.summary;
+        List<String> listOfSummary = metalColorsEntity.summary;
         listOfSummary.stream().forEach(elem -> summary.select(String.valueOf(elem)));
 
         List<String> listOfElements = metalColorsEntity.elements;
@@ -57,22 +58,11 @@ public class MetalsColorsForm extends Form<MetalColorsEntity> {
     }
 
     public void verifyIfResultsAreCorrect(MetalColorsEntity metalColorsEntity) {
-
-        int summary = metalColorsEntity.summary.get(0) + metalColorsEntity.summary.get(1);
-
-        List<String> listOfElements = metalColorsEntity.elements;
-        String stringOfElements = listOfElements.stream().collect(Collectors.joining(", "));
-
-        List<String> listOfVegetables = metalColorsEntity.vegetables;
-        String stringOfVegetables = listOfVegetables.stream().collect(Collectors.joining(", "));
-
-        List<String> expectedResult = Arrays.asList(
-                "Summary: " + String.valueOf(summary), "Elements: " + stringOfElements,
-                "Color: " + metalColorsEntity.color,
-                "Metal: " + metalColorsEntity.metals, "Vegetables: " + stringOfVegetables
-        );
-        List<String> actualResult = resultsListTransfer();
-        actualResult.equals(expectedResult);
+        JdiSite.metalsColorsPage.getResultInfo().getColor().is().text(getColor(metalColorsEntity));
+        JdiSite.metalsColorsPage.getResultInfo().getMetal().is().text(getMetal(metalColorsEntity));
+        JdiSite.metalsColorsPage.getResultInfo().getElements().is().text(getElements(metalColorsEntity));
+        JdiSite.metalsColorsPage.getResultInfo().getVegetables().is().text(getVegetables(metalColorsEntity));
+        JdiSite.metalsColorsPage.getResultInfo().getSummary().is().text(getSummary(metalColorsEntity));
     }
 
     @Override
